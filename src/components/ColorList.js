@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Color from './Color';
-import ColorContext from './';
+// import ColorContext from './';
+import {useColors} from '../context/color-hooks';
 
 export default function ColorList(){ // props 제거
 
-  const {colors} = useContext(ColorContext);
+  const {colors} = useColors(); // useColors 사용.
 
   if(!colors.length) return <div>표시할 색이 없습니다. (Add a Color)</div>;
 
