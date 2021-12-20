@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import colors from "./data/color-data.json";
 
 export const ColorContext = createContext();
 
 ReactDOM.render(
+
   <React.StrictMode>
-    <App />
+    <ColorContext.Provider value={{colors}}>
+      <App />
+    </ColorContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
